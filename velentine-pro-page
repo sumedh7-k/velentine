@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine Proposal 💘</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      width: 320px;
+      position: relative;
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .no {
+      background: #999;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Hey ❤️</h1>
+    <p>Tu mala khup avadto/avdate 🥺</p>
+    <p>Will you be my Valentine? 🌹</p>
+
+    <button class="btn yes" onclick="yesClicked()">Yes 💕</button>
+    <button class="btn no" onmouseover="moveNo(this)">No 😜</button>
+  </div>
+
+  <script>
+    function moveNo(btn) {
+      const card = document.querySelector('.card');
+      const maxX = card.offsetWidth - btn.offsetWidth;
+      const maxY = card.offsetHeight - btn.offsetHeight;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      btn.style.left = x + 'px';
+      btn.style.top = y + 'px';
+    }
+
+    function yesClicked() {
+      alert("Yesss! 💖 You just made my Valentine special 😍🌹");
+    }
+  </script>
+
+</body>
+</html>
